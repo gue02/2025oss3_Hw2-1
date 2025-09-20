@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #submit{
+            background-color: blue;
+            color : white;
+        }#reset{
+            background-color: green;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Dynamic Web Page</h3>
+    <input id="textfruit" type="text" placeholder="Input Fruit">
+    <input onclick="add()" id = submit type ="submit" value="추가">
+    <input onclick="reset()" id = reset type ="reset" value="삭제">
+    <ul id ="fruitList">
+    </ul>
+</body>
+<script>
+    function add(){ 
+            var textfruit = document.getElementById("textfruit").value.trim();
+            
+            var ul = document.getElementById("fruitList");
+            var li = document.createElement("li");
+            li.textContent = textfruit;
+            ul.appendChild(li);
+
+            document.getElementById("textfruit").value = "";
+        }
+        function reset(){ 
+            var ul = document.getElementById("fruitList");
+            ul.innerHTML = "";
+        }
+</script>
+</html>

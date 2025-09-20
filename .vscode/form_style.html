@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>List Groups – Simple Classes</title>
+
+  <style>
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+    }
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      color: #212529; 
+    }
+    img { 
+      display: block; 
+      max-width: 100%; 
+    }
+    a { 
+      color: inherit; 
+      text-decoration: none; 
+    }
+
+    .pad1 { padding: 16px; }
+    .pad2 { padding: 12px; }
+    .gap1 { gap: 16px; }
+    .gap2 { gap: 8px; }
+    .m0 { margin: 0; }
+    .m1 { margin: 16px; }
+    .round1 { border-radius: 9px; }
+    .round2 { border-radius: 60%; }
+    .full1 { width: 100%; }
+    .bold1 { font-weight: 660; }
+    .muted1 { color: #6c757d; }
+    .bg1 { background: #f8f9fa; }
+    .bg2 { background: #e9ecef; }
+    .border1 { border: 1px solid #dee2e6; }
+    .shadow1 { box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+
+    .wrap1 { display: flex; flex-direction: column; align-items: center; }
+
+    .divider1 {
+      width: 100%; height: 3rem; background: rgba(0,0,0,.06);
+      border-top: 1px solid rgb(19, 19, 19);
+      border-bottom: 1px solid rgb(19, 19, 19);
+      
+    }
+
+    .group1 { display: block; width: 100%; max-width: 720px; }
+    .item1 { display: flex; align-items: flex-start; border-bottom: 1px solid #dee2e6; background: #fff; }
+    .item1:first-child { border-top-left-radius: 8px; border-top-right-radius: 8px; border-top: 1px solid #dee2e6; }
+    .item1:last-child  { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+    .item1:hover { background: #f8f9fa; }
+
+    .flex1 { display: flex; }
+    .between1 { justify-content: space-between; }
+    .shrink1 { flex-shrink: 0; }
+    .grow1 { flex: 1 1 auto; }
+
+    .avatar1 { width: 32px; height: 32px; border-radius: 50%; }
+
+    h6 { font-size: 16px; margin: 0; }
+    p.p1 { margin: 0; }
+
+    .label1 { 
+      display: flex;
+      align-items: flex-start; 
+      border-bottom: 1px solid #dee2e6; 
+      background: #fff; 
+      cursor: pointer; }
+    .label1:first-child { 
+      border-top: 1px solid #dee2e6;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px; }
+    .label1:last-child  { 
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    .input1 { margin-top: 3px; }
+    .txt1 { display: inline-block; }
+    .txt2 { 
+      display: block;
+      font-size:12px; 
+      color: #6c757d; 
+    }
+
+    .taskbox1 .input1 { font-size: 20px; }
+
+    .checkwrap1 { display: grid; gap: 8px; }
+    .cardradio1 { 
+      border: 1px solid #dee2e6;
+      border-radius: 8px; background: #fff; 
+      cursor: pointer; 
+    }
+    .cardradio1:hover { background: #f8f9fa; }
+    .hidden1 { 
+      position: absolute; 
+      opacity: 0; 
+      pointer-events: none; 
+    }
+    .hidden1:checked + .cardradio1 { 
+      border-color: #0d6efd; 
+    }
+
+    .rowradio1 { position: relative; }
+    .rowradio1 .rightinput1 {
+      position: absolute; 
+      top: 50%; 
+      right: 11px;
+      font-size: 20px;
+    }
+    .rowlabel1 { display: block; 
+      border: 1px solid #dee2e6; 
+      border-radius: 8px; 
+      background: #fff; 
+      padding-right: 3rem; }
+    .rowlabel1:hover { background: #f8f9fa; }
+
+    .sect1 { padding: 32px 16px; }
+    .name { 
+      border : 1px solid #dee2e6;
+      padding: 20px;
+      border-radius: 8px; 
+      display: flex;
+      width : 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="sect1">
+    <div class="wrap1 gap1">
+      <div class="group1 border1 round1 shadow1">
+        <a href="#" class="item1 pad2 gap1">
+          <img src="https://github.com/twbs.png" alt="" class="avatar1 shrink1" />
+          <div class="flex1 gap2 full1 between1">
+            <div class="grow1">
+              <h6 class="m0">List group item heading</h6>
+              <p class="p1 opa2">Some placeholder content in a paragraph.</p>
+            </div>
+            <small class="opa1 nowrap1">now</small>
+          </div>
+        </a>
+
+        <a href="#" class="item1 pad2 gap1">
+          <img src="https://github.com/twbs.png" alt="" class="avatar1 shrink1" />
+          <div class="flex1 gap2 full1 between1">
+            <div class="grow1">
+              <h6 class="m0">Another title here</h6>
+              <p class="p1 opa2">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
+            </div>
+            <small class="opa1 nowrap1">3d</small>
+          </div>
+        </a>
+
+        <a href="#" class="item1 pad2 gap1">
+          <img src="https://github.com/twbs.png" alt="" class="avatar1 shrink1" />
+          <div class="flex1 gap2 full1 between1">
+            <div class="grow1">
+              <h6 class="m0">Third heading</h6>
+              <p class="p1 opa2">Some placeholder content in a paragraph.</p>
+            </div>
+            <small class="opa1 nowrap1">1w</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider1"></div>
+  <section class="sect1">
+    <div class="wrap1 gap1">
+
+      <div class="group1 border1 round1 shadow1">
+        <label class="label1 pad2 gap2">
+          <input type="checkbox" class="input1 shrink1" checked />
+          <span class="txt1">
+            First checkbox
+            <small class="txt2">With support text underneath to add more detail</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap2">
+          <input type="checkbox" class="input1 shrink1" />
+          <span class="txt1">
+            Second checkbox
+            <small class="txt2">Some other text goes here</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap2">
+          <input type="checkbox" class="input1 shrink1" />
+          <span class="txt1">
+            Third checkbox
+            <small class="txt2">And we end with another snippet of text</small>
+          </span>
+        </label>
+      </div>
+
+      <div class="group1 border1 round1 shadow1">
+        <label class="label1 pad2 gap2">
+          <input type="radio" name="rg1" class="input1 shrink1" checked />
+          <span class="txt1">
+            First radio
+            <small class="txt2">With support text underneath to add more detail</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap2">
+          <input type="radio" name="rg1" class="input1 shrink1" />
+          <span class="txt1">
+            Second radio
+            <small class="txt2">Some other text goes here</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap2">
+          <input type="radio" name="rg1" class="input1 shrink1" />
+          <span class="txt1">
+            Third radio
+            <small class="txt2">And we end with another snippet of text</small>
+          </span>
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider1"></div>
+  
+  <section class="sect1">
+    <div class="wrap1 gap1">
+      <div class="group1 border1 round1 shadow1 taskbox1">
+        <label class="label1 pad2 gap1">
+          <input type="checkbox" class="input1 shrink1" checked />
+          <span class="txt1">
+            <strong class="bold1">Finish sales report</strong>
+            <small class="txt2">1:00–2:00pm</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap1">
+          <input type="checkbox" class="input1 shrink1" />
+          <span class="txt1">
+            <strong class="bold1">Weekly All Hands</strong>
+            <small class="txt2">2:00–2:30pm</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap1">
+          <input type="checkbox" class="input1 shrink1" />
+          <span class="txt1">
+            <strong class="bold1">Out of office</strong>
+            <small class="txt2">Tomorrow</small>
+          </span>
+        </label>
+
+        <label class="label1 pad2 gap1 bg2">
+          <input type="checkbox" class="input1 shrink1" disabled />
+          <span class="txt1">
+            <span contenteditable="true" class="full1">Add new task...</span>
+            <small class="txt2">Choose list...</small>
+          </span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider1"></div>
+  <section class="sect1">
+    <div class="wrap1 gap1">
+      <div class="group1">
+        <div class="checkwrap1">
+
+          <input type="radio" id="cr1" name="crg1" class="hidden1" checked />
+          <label class="cardradio1 pad2" for="cr1">
+            First radio
+            <span class="txt2">With support text underneath to add more detail</span>
+          </label>
+
+          <input type="radio" id="cr2" name="crg1" class="hidden1" />
+          <label class="cardradio1 pad2" for="cr2">
+            Second radio
+            <span class="txt2">Some other text goes here</span>
+          </label>
+
+          <input type="radio" id="cr3" name="crg1" class="hidden1" />
+          <label class="cardradio1 pad2" for="cr3">
+            Third radio
+            <span class="txt2">And we end with another snippet of text</span>
+          </label>
+
+          <input type="radio" id="cr4" name="crg1" class="hidden1" disabled />
+          <label class="cardradio1 pad2" for="cr4">
+            Fourth disabled radio
+            <span class="txt2">This option is disabled</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider1"></div>
+  <section class="sect1">
+    <div class="wrap1 gap1">
+      <div class="group1">
+
+        <div class="rowradio1 m1">
+          <input type="radio" id="rgx1" name="rgx" class="rightinput1" checked />
+          <label class="rowlabel1 pad2" for="rgx1">
+            <strong class="bold1">First radio</strong>
+            <span class="txt2">With support text underneath to add more detail</span>
+          </label>
+        </div>
+
+        <div class="rowradio1 m1">
+          <input type="radio" id="rgx2" name="rgx" class="rightinput1" />
+          <label class="rowlabel1 pad2" for="rgx2">
+            <strong class="bold1">Second radio</strong>
+            <span class="txt2">Some other text goes here</span>
+          </label>
+        </div>
+
+        <div class="rowradio1 m1">
+          <input type="radio" id="rgx3" name="rgx" class="rightinput1" />
+          <label class="rowlabel1 pad2" for="rgx3">
+            <strong class="bold1">Third radio</strong>
+            <span class="txt2">And we end with another snippet of text</span>
+          </label>
+        </div>
+
+        <div class="rowradio1 m1">
+          <input type="radio" id="rgx4" name="rgx" class="rightinput1" disabled />
+          <label class="rowlabel1 pad2" for="rgx4">
+            <strong class="bold1">Fourth disabled radio</strong>
+            <span class="txt2">This option is disabled</span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+    <form class="p-3">
+   <div class = "name">
+    <h6> input name & email </h6>
+    <input id="nameInput" type="text" class="form-control mb-2" placeholder="Your name"> <br/>
+    <input id="emailInput" type="email" class="form-control mb-2" placeholder="you@example.com">
+  </div>
+  <button onclick="check()" type = "button"> submit </button>
+  </section>
+  
+  <script>
+  </script>
+</body>
+</html>
